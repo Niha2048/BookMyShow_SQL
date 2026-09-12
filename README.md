@@ -162,3 +162,32 @@ WHERE s.show_date = '2026-09-12'
 4. Run the P2 query to verify results.
 
 
+# Normalization Justification
+
+### 1NF (First Normal Form)
+All attributes hold atomic values (no repeating groups or multi‑valued fields).
+
+Example: Movies.title stores a single movie name, not multiple titles.
+
+Bookings.seat_number stores one seat per row, not a list of seats.
+
+### 2NF (Second Normal Form)
+Every non‑key attribute depends on the whole primary key, not part of it.
+
+Example: In Shows, show_date and show_time depend on the full show_id, not just theatre_id or movie_id.
+
+No partial dependency exists because composite keys are avoided - each table has a surrogate key (*_id).
+
+### 3NF (Third Normal Form)
+No transitive dependencies (non‑key attributes depending on other non‑key attributes).
+
+Example: In Users, email does not determine phone; both depend only on user_id.
+
+In Movies, genre does not determine duration; both depend only on movie_id.
+
+### BCNF (Boyce‑Codd Normal Form)
+Every determinant is a candidate key.
+
+Example: In Bookings, the determinant booking_id uniquely determines show_id, user_id, seat_number, and booking_date.
+
+No non‑trivial functional dependency exists where a non‑candidate key determines another attribute.
