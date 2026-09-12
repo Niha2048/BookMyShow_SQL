@@ -143,8 +143,10 @@ CREATE TABLE Bookings (
     FOREIGN KEY (show_id) REFERENCES Shows(show_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
+```
 
--- P2 Query
+## P2 Query
+```sql
 SELECT m.title, s.show_time
 FROM Shows s
 JOIN Movies m ON s.movie_id = m.movie_id
