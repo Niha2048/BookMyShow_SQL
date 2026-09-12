@@ -156,7 +156,11 @@ WHERE s.show_date = '2026-09-12'
 ```
 ## How to Run
 1.Open MySQL Workbench.
+
 2.Run the BookMyShow_DB.sql script to create schema and tables.
+
 3.Insert sample data.
+
 4.Run the P2 query to verify results.
+
 
